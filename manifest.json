@@ -1,0 +1,64 @@
+{
+    "name": "Un-Aadhar",
+    "version": "1.0",
+    "description": "Document Verification made easy!",
+    "permissions": [
+        "tabs",
+        "declarativeContent",
+        "notifications",
+        "storage",
+        "videoCapture",
+        "fileSystem",
+        "http://*/",
+        "https://*/"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/",
+                "http://localhost:5000/testing/unaadhar-page.html"
+
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "externally_connectable": {
+        "matches": [
+            "*://*.google.com/*",
+            "http://localhost:5000/testing/unaadhar-page.html"
+        ]
+    },
+    "web_accessible_resources": [
+        "js/unaadhar.js"
+    ],
+    "options_page": "options.html",
+    "background": {
+        "scripts": [
+            "lib/tesseract.js",
+            "lib/ocrad.js",
+            "lib/face-api.js",
+            "lib/idbkvstore.js",
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "page_action": {
+        "default_popup": "gettingStarted.html",
+        "default_icon": {
+            "16": "images/unaadhar16.png",
+            "32": "images/unaadhar32.png",
+            "48": "images/unaadhar48.png",
+            "128": "images/unaadhar128.png"
+        }
+    },
+    "icons": {
+        "16": "images/unaadhar16.png",
+        "32": "images/unaadhar32.png",
+        "48": "images/unaadhar48.png",
+        "128": "images/unaadhar128.png"
+    },
+    "manifest_version": 2
+}

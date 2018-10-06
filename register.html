@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Register user</title>
+
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="lib/idbkvstore.js"></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="section">
+      <h5>Registration</h5>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+    </div>
+    <div class="row">
+      <form class="col s12" id="reg-form">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="firstname" type="text" class="validate">
+            <label for="firstname">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="lastname" type="text" class="validate">
+            <label for="lastname">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="address" class="materialize-textarea" required></textarea>
+            <label for="address">Address</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email ID</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="username" type="text" class="validate" required>
+            <label for="username">Username</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate" minlength="6" required>
+            <label for="password">Password</label>
+          </div>
+        </div>
+
+        <div class="input-field col push-s8">
+          <button id="submit" class="btn btn-register waves-effect waves-light" type="button">Register
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="lib/jquery.js"></script>
+  <script type="text/javascript" src="lib/idbkvstore.js"></script>
+  <script type="text/javascript" src="userconstants.js"></script>
+  <script type="text/javascript" src="register.js"></script>
+</body>
+
+</html>

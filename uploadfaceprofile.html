@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Upload Face</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .video-mask {
+                margin-left: 10px;
+                margin-top: 10px; 
+                height: 300px;
+                -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); 
+                -webkit-transform: rotate(0.000001deg); 
+                -webkit-border-radius: 12px; 
+                -moz-border-radius: 12px;
+                border-radius: 12px; 
+                overflow: hidden; 
+        }
+
+        .video-overlay {
+            position: absolute;
+            margin: 120px 130px;
+            font-size: 20px;
+            font-family: Helvetica;
+            font-weight: bold;
+            color: #FFF;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="preloader-wrapper big active" style="top: 140px; left: 160px">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="col push-s3">
+                Processing...
+                </h5>
+        </div>
+
+    </div>
+
+    <div id="notloader">
+        <div class="outer-container">
+            <div class="inner-container">
+                <div class="video-mask">
+                    <div class="video-overlay">Please take some photos</div>
+                    <video autoplay="true" id="videoElement" height="300px"></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="row"></div>
+        <div class="row" id="morephotos">
+            <div class="col push-s2">
+                <h6>
+                    Please take a few more photos
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col s4 push-s4">
+                    <button class="btn waves-effect waves-light" id="takephoto">Take Photo
+                        <i class="material-icons right">fiber_manual_record</i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col push-s8">
+                    <button class="btn waves-effect waves-light" id="next">Next
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/idbkvstore.js"></script>
+    <script type="text/javascript" src="userconstants.js"></script>
+    <script type="text/javascript" src="lib/face-api.js"></script>
+    <script type="text/javascript" src="uploadfaceprofile.js"></script>
+
+</body>
+
+</html>

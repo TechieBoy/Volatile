@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Upload Files</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <style>
+        #filedrag {
+            display: none;
+            font-weight: bold;
+            text-align: center;
+            padding: 1em 0;
+            margin: 1em 0;
+            color: #555;
+            border: 2px dashed #555;
+            border-radius: 7px;
+            cursor: default;
+        }
+
+        #filedrag.hover {
+            color: rgb(0, 128, 255);
+            border-color: rgb(0, 128, 255);
+            border-style: solid;
+            box-shadow: inset 0 3px 4px #888;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <h5>Upload Documents</h5>
+        </div>
+        <div class="divider"></div>
+        <form>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Browse Files</span>
+                    <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                    <div id="filedrag">or drop files here</div>
+                </div>
+
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload multiple files" />
+                </div>
+            </div>
+
+
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row" id="submitbutton">
+                <div class="col push-s6">
+                    <div class="col push-s8">
+                        <input type="submit" class="btn btn-register waves-effect waves-light" name="Finish" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="messages"></div>
+        </form>
+    </div>
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/idbkvstore.js"></script>
+    <script src="userconstants.js"></script>
+    <script src="js/fileupload.js"></script>
+
+
+</body>
+
+</html>

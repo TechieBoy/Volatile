@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Login</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .video-mask {
+                margin-left: 10px;
+                margin-top: 10px; 
+                height: 300px;
+                -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); 
+                -webkit-transform: rotate(0.000001deg); 
+                -webkit-border-radius: 12px; 
+                -moz-border-radius: 12px;
+                border-radius: 12px; 
+                overflow: hidden; 
+        }
+
+        .video-overlay {
+            position: absolute;
+            margin: 120px 105px;
+            font-size: 20px;
+            font-family: Helvetica;
+            font-weight: bold;
+            color: #FFF;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <h5 id="username">Hi User!</h5>
+        </div>
+        <div class="divider"></div>
+        <div id="takePhoto">
+            <div class="outer-container">
+                <div class="inner-container">
+                    <div class="video-mask">
+                        <div class="video-overlay">Please position your face</div>
+                        <video autoplay="true" id="videoElement" height="300px"></video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row"></div>
+            <div class="row">
+                <div class="row">
+                    <div class="col s4 push-s5">
+                        <button class="btn waves-effect waves-light" id="login">Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="hiddenpass">
+            <div class="section">
+                <h3>Face Verify Failed</h3>
+            </div>
+            <div class="divider" style="margin-top: -24px"></div>
+            <div class="row">
+                <h5>Cannot Verify Face, please enter password</h5>
+            </div>
+            <div class="row">
+                <div class="col input-field">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="col input-field">
+                    <input type="button" class="btn btn-waves input-field" value="Submit" id="pass">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/idbkvstore.js"></script>
+    <script type="text/javascript" src="userconstants.js"></script>
+
+    <script type="text/javascript" src="lib/face-api.js"></script>
+    <script type="text/javascript" src="verify.js"></script>
+    <script type="text/javascript" src="identify.js"></script>
+
+</body>
+
+</html>

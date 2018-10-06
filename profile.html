@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="section" style="margin-top: -20px">
+            <div class="row">
+                <div class="col s7">
+                    <h3 id="username">Hi User!</h3>
+                </div>
+                <div class="col s1" style="margin-top: 35px">
+                    <div class="btn btn-waves" id="logout">Logout</div>
+                </div>
+            </div>
+        </div>
+        <div class="divider" style="margin-top: -24px"></div>
+
+        <ul class="collection with-header" id="docsList">
+            <ul class="collection-header">
+                <div class="row">
+                    <div class="col s8">
+                        <h5>Your Documents</h5>
+                    </div>
+                    <div class="col s1" style="margin-top: 10px">
+                        <a href="docupload.html" class="btn btn-waves" target="_self">Add Files</a>
+                    </div>
+                </div>
+            </ul>
+        </ul>
+
+        <div class="section">
+            <div class="row">
+                <div class="col s7">
+                    <h5>Your Photos</h5>
+                </div>
+                <div class="col s1" style="margin-top: 10px">
+                    <a href="uploadfaceprofile.html" class="btn btn-waves" target="_self">Add Files</a>
+                </div>
+            </div>
+        </div>
+        <div class="divider" style="margin-top: -24px"></div>
+
+        <div id="allImages" class="slider" style="margin: 10px">
+            <ul class="slides" id="slides">
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="lib/idbkvstore.js"></script>
+    <script type="text/javascript" src="userconstants.js"></script>
+    <script type="text/javascript" src="profile.js"></script>
+
+</body>
+
+</html>

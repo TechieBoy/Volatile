@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Un aadhar</title>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js" integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="lib/idbkvstore.js"></script> -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>ABC Bank</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1" style="display: none">Modal</a>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Un-aadhar</h4>
+      <p id="message">Would you like to verify user details using Un-aadhar?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn waves-effect waves-light" id='verify'>Verify Using Un-aadhar
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+  <div style="width: 40%; margin-left: 31% " class="userform">
+    <div class="row" style="margin-bottom: 10%">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="First Name" id="fname" type="text" class="validate">
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="Last Name" id="lname" type="text" class="validate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="Email ID" id="email" type="email" class="validate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea placeholder="Address" id="address" class="materialize-textarea"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="file-field input-field col s12">
+            <div class="btn">
+              <span>Documents</span>
+              <input type="file" id="proof" multiple>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Upload Address and ID proof">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul class="collection" id="filedetails">
+              
+            </ul>
+          </div>
+        </div>
+        <div class="row" id="submitbtn">
+          <div class="col push-s8 input-field">
+            <input type="button" class="btn btn-waves" value="Submit" onclick='alert("Successfully Uploaded!")'>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+
+  <script>
+    $(document).ready(function () {
+      $('.modal').modal();
+      $('.modal').modal('open');
+    });
+  </script>
+  <script src="unaadhar-page.js"></script>
+</body>
+
+</html>
