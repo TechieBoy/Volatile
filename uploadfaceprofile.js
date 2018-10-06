@@ -59,8 +59,13 @@ async function takePhoto(mediaStream) {
 }
 
 
-function goToProfile(){
-    window.open("profile.html")
+function goToDocUpload(){
+    var popupWindow = window.open(
+        chrome.extension.getURL("docupload.html"),
+        "File Upload",
+        "width=400,height=400,left=900,top=65"
+    );
+    window.close();
 }
 async function savePhotos() {
     console.log("In save photo!");
@@ -71,14 +76,16 @@ async function savePhotos() {
     current_user = await getCurrentUser();
     let processedImages = await convertImages(images);
     let store = new IdbKvStore(DB_NAME);
-    // Store the images for current_user
+
+    let existing_images = await store.get(current_user);
+    Object.assign(existing_images, processedImages);
     console.log("Saving the following images");
     console.log(processedImages);
     console.log(current_user);
-    await store.set(current_user, processedImages, function (error) {
+    await store.set(current_user, existing_images, function (error) {
         if (error)
             throw error;
-        goToProfile();
+        window.open("profile.html", "_self");
     });
 
     
